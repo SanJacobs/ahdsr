@@ -14,10 +14,13 @@
 ;    You should have received a copy of the GNU General Public License
 ;    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-opcode ahdsr, a, iiiiiiii
+; TODO: Convert every variable after attack tension to k-rate,
+;		allowing the attributes of each section to be changed before it is reached.
 
+opcode ahdsr, a, iiiiiiii
 xin iAttack, iAttackTension, iHold, iDecay, iDecayTension, iSustain, iRelease, iReleaseTension
 
-xout aOut
 
+
+xout aOut
 endop
