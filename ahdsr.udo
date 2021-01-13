@@ -17,8 +17,31 @@
 ; TODO: Convert every variable after attack tension to k-rate,
 ;		allowing the attributes of each section to be changed before it is reached.
 
+opcode expTen, i, i
+xin iTension
+; UDO for generating exponent from tension value
+; The fairly magic function is: f = (x * 2 - 2) ^ 2
+; x = tension value
+; f = exponent
+
+iExponent = (iTension * 2 - 2) ^ 2
+
+xout iExponent
+endop
+
+
 opcode ahdsr, a, iiiiiiii
 xin iAttack, iAttackTension, iHold, iDecay, iDecayTension, iSustain, iRelease, iReleaseTension
+
+; Generating exponents based on tension value, which is intended to be between 0 and 1. With 0.5 being linear.
+iAttackExponent expTen iAttackTension
+iDecayExponent expTen iDecayTension
+iReleaseExponent expTen iReleaseTension
+
+; Generating each segment
+
+
+; Adding them together
 
 
 
