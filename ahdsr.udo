@@ -39,11 +39,11 @@ iDecayExponent expTen iDecayTension
 iReleaseExponent expTen iReleaseTension
 
 ; Generating each segment
-;						A		>		B		>		C		>		D		>		E		>		F		>		G
+;						A		>		B		>		C		>		D		>		E		>		F		>		G		>		H
 aAttackCurve linseg		0,		iAttack,1,		0,		0
 aHoldCurve linseg		0,		iAttack,0,		0,		1,		iHold,	1,		0,		0
 aDecayCurve linseg		0,		iAttack,0,		0,		0,		iHold,	0,		0,		1,		iDecay,	iSustain,0,		0
-aReleaseCurve linseg	0,		iAttack,0,		0,		0,		iHold,	0,		0,		0,		iDecay,	0,		0,		1,		iRelease,
+aReleaseCurve linseg	0,		iAttack,0,		0,		0,		iHold,	0,		0,		0,		iDecay,	0,		0,		1,		iRelease,0
 
 ; Adding them together
 
